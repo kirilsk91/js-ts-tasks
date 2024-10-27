@@ -5,5 +5,19 @@
  * @returns {number}
  */
 module.exports.sumInRange = function sumInRange(start, end) {
-  throw new Error('Not implemented');
+  let res = 0;
+  // need to check the lower and higher value out of both parameters
+  // in case start < end
+  // Number() converts entire value to number, including other types
+  // parseInt() used to convert strings ignoring all non-numeric values '12abcd'
+  // that follow potential number
+  const lowValue = Math.min(parseInt(start, 10), parseInt(end, 10));
+  const highValue = Math.max(parseInt(start, 10), parseInt(end, 10));
+  let count = lowValue;
+  while (count <= highValue) {
+    res += count;
+    count += 1;
+  }
+
+  return res;
 };

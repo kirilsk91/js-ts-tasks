@@ -9,5 +9,6 @@ module.exports.divider = function divider(n, k) {
   const resOfDiv = n / k;
   const wholePart = Math.trunc(resOfDiv);
   const remainder = n % k;
+  // testing commit
   return `${wholePart} ${remainder}`;
 };

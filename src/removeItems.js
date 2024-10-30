@@ -5,5 +5,7 @@
  * @returns {Object}
  */
 module.exports.removeItems = function removeItems(arr, value) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  // doesnt work with objs
+  const filteredArr = arr.filter(v => v !== value);
+  return filteredArr;
 };

@@ -5,5 +5,6 @@
  * @returns {boolean}
  */
 module.exports.hasProperty = function hasProperty(object, prop) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  // either .hasOwnProperty() or compare obj['propname'] with undefined
+  return prop.toString() in object;
 };

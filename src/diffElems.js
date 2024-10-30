@@ -4,5 +4,13 @@
  * @returns {number}
  */
 module.exports.diffElems = function diffElems(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  let i = 0;
+  const elArr = [];
+  while (i < arr.length) {
+    if (!elArr.includes(arr[i])) {
+      elArr.push(arr[i]);
+    }
+    i += 1;
+  }
+  return elArr.length;
 };

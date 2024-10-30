@@ -8,6 +8,7 @@
  */
 module.exports.getDistance = function getDistance(firstPoint, secondPoint) {
   // d=sqr((x2-x1)^2+(y2-y1)^2)
+  // testing commit to origin
   const res = Math.sqrt((secondPoint.X - firstPoint.X) ** 2 + (secondPoint.Y - firstPoint.Y) ** 2);
   return res.toFixed(2);
 };

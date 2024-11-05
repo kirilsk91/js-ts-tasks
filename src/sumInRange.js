@@ -11,8 +11,10 @@ module.exports.sumInRange = function sumInRange(start, end) {
   // Number() converts entire value to number, including other types
   // parseInt() used to convert strings ignoring all non-numeric values '12abcd'
   // that follow potential number
-  const lowValue = Math.min(parseInt(start, 10), parseInt(end, 10));
-  const highValue = Math.max(parseInt(start, 10), parseInt(end, 10));
+  const parsedStart = parseInt(start);
+  const parsedEnd = parseInt(end);
+  const lowValue = Math.min(parsedStart, parsedEnd);
+  const highValue = Math.max(parsedStart, parsedEnd);
   let count = lowValue;
   while (count <= highValue) {
     res += count;

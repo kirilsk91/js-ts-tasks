@@ -6,8 +6,10 @@
 module.exports.digitsSum = function digitsSum(n) {
   const absValString = Math.abs(n).toString();
   let res = 0;
-  for (let index = 0; index < absValString.length; index++) {
-    res += parseInt(absValString[index], 10);
+  let index = 0;
+  while (index < absValString.length) {
+    res += parseInt(absValString[index]);
+    index++;
   }
   return res;
 };

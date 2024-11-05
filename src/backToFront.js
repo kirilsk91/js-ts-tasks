@@ -9,7 +9,5 @@ module.exports.backToFront = function backToFront(str, symbolsCount) {
     return str;
   }
   const slicedSymbols = str.slice(str.length - symbolsCount);
-  const resStr = `${slicedSymbols}${str}${slicedSymbols}`;
-
-  return resStr;
+  return `${slicedSymbols}${str}${slicedSymbols}`;
 };

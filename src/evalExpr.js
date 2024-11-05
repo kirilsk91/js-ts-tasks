@@ -4,6 +4,6 @@
  * @returns {number}
  */
 module.exports.evalExpr = function evalExpr(k) {
-  const answer = 4 * (2 * k - 1);
-  return answer;
+  return  4 * (2 * k - 1);
+  // return answer;
 };

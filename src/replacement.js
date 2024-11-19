@@ -8,5 +8,8 @@
  * @returns {Array<number>}
  */
 module.exports.replacement = function replacement(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  return arr.map(arrEl => {
+    const elLength = Math.abs(arrEl).toString().length;
+    return elLength > 3 ? 4 : elLength;
+  });
 };

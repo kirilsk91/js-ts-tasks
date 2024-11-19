@@ -12,5 +12,14 @@
  * @returns {Object}
  */
 module.exports.partialSum = function partialSum(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  const resArray = [];
+  let i = 0;
+  let sum = 0;
+
+  while (i < arr.length) {
+    sum += arr[i];
+    resArray.push(sum);
+    i += 1;
+  }
+  return resArray;
 };

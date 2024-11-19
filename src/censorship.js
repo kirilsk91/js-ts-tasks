@@ -14,5 +14,12 @@
  * @returns {function}
  */
 module.exports.censorship = function censorship(forbidden) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  return input =>
+    // Join array elements with '|' to form a regex filter
+    // Use filter for all occurences of a match and be case-insensitive
+    input.replace(new RegExp(`(${forbidden.join('|')})`, 'gi'), matchedSubStrings => {
+      // replace matched substrings with '*' of substrings length
+      const result = '*'.repeat(matchedSubStrings.length);
+      return result;
+    });
 };

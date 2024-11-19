@@ -9,5 +9,14 @@
  * @returns {function}
  */
 module.exports.formatAddressWithOrder = function formatAddressWithOrder(order) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  // return objectWithAdress => {
+  //   let result = '';
+  //   order.forEach((el, index) => {
+  //     result += index !== order.length - 1 ? `${objectWithAdress[el]}, ` : objectWithAdress[el];
+  //   });
+  //   return result;
+  // };
+  // Or use a map() method to extract adress fields
+  // into array, then concatanate elements together with ', '
+  return objectWithAdress => order.map(el => objectWithAdress[el]).join(', ');
 };

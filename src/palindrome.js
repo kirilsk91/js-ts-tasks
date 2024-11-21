@@ -13,5 +13,12 @@
  * @returns {function}
  */
 module.exports.palindrome = function palindrome(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+  return data => {
+    const allLowerCase = data.toLowerCase();
+    const nonAlphanumeric = allLowerCase.replace(/[^a-z0-9]/g, '');
+
+    TestUtils.str = nonAlphanumeric;
+
+    return TestUtils.isPalindrome();
+  };
 };

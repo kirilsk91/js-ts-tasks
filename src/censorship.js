@@ -16,7 +16,8 @@
 module.exports.censorship = function censorship(forbidden) {
   return input =>
     // Join array elements with '|' to form a regex filter
-    // Use filter for all occurences of a match and be case-insensitive
+    // Use filter for all occurences of a match and be case-insensitive (g, i)
+    // regex -> (option1|option2)/gi
     input.replace(new RegExp(`(${forbidden.join('|')})`, 'gi'), matchedSubStrings => {
       // replace matched substrings with '*' of substrings length
       const result = '*'.repeat(matchedSubStrings.length);

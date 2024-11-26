@@ -6,8 +6,6 @@
 // eslint-disable-next-line no-unused-vars
 module.exports.primeNumbers = function primeNumbers(highestNumber) {
   // Not sure where to use highestNumber parameter
-  const primesArray = [];
-
   const isPrime = num => {
     // Natural numbers (greater than 1) can be prime numbers, except
     // when they are even (excluding 2)
@@ -21,6 +19,7 @@ module.exports.primeNumbers = function primeNumbers(highestNumber) {
   };
 
   return (num1, num2) => {
+    const primesArray = [];
     const low = Math.min(num1, num2);
     const high = Math.max(num1, num2);
     let i = low;

@@ -10,6 +10,8 @@ module.exports.primeNumbers = function primeNumbers(highestNumber) {
     // Natural numbers (greater than 1) can be prime numbers, except
     // when they are even (excluding 2)
     if (num === 1 || (num % 2 === 0 && num !== 2)) return false;
+    // no point in looking for larger divisors of a pair,
+    // after getting through sqrt(num) divisor pairs are repeated in reverse
     const sqrtNum = Math.sqrt(num);
     for (let i = 2; i <= sqrtNum; i++) {
       if (num % i === 0) return false;

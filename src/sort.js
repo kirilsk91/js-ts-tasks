@@ -9,5 +9,7 @@
  * @returns {function}
  */
 module.exports.sort = function sort(TestUtils) {
+  // expect various number of parameters with rest ... parameter as an arary
+  // pass sortComparator method as argument, cb
   return (...parameters) => parameters.sort(TestUtils.sortComparator);
 };

@@ -24,6 +24,8 @@
  */
 module.exports.payments = function payments(TestUtils) {
   return (incomeObject, expenseObject) => {
+    // call awaits individual arguments and executes immediately, apply await array of elements
+    //  and executes immediately, bind doesnt get executed immediately
     const totalIncome = TestUtils.sumAllObjectProperties.call(incomeObject);
     const totalExpense = TestUtils.sumAllObjectProperties.call(expenseObject);
 

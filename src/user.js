@@ -112,7 +112,7 @@ module.exports.createUsersSortFn = function (TestUtils) {
  */
 module.exports.celebrate = function (users) {
   return users.map((user, index) => {
-    index % 2 !== 0 && user.celebrateBirthday();
+    index % 2 === 0 && user.celebrateBirthday();
     return user;
   });
 

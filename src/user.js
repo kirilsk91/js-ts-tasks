@@ -4,21 +4,23 @@ class User {
   #age;
 
   constructor(firstName, secondName, age) {
-    if (typeof firstName !== 'string') {
-      throw new Error('Value must be a non-empty string');
-    }
+    // if (typeof firstName !== 'string') {
+    //   throw new Error('Value must be of string');
+    // }
+    // if (typeof secondName !== 'string') {
+    //   throw new Error('Value must be of string');
+    // }
+    // if (typeof age !== 'number' || age <= 0) {
+    //   throw new Error('Value must be a positive number');
+    // }
 
-    if (typeof secondName !== 'string') {
-      throw new Error('Value must be a non-empty string');
-    }
+    // this.#firstName = firstName;
+    // this.#secondName = secondName;
+    // this.#age = age;
 
-    if (typeof age !== 'number' || age <= 0) {
-      throw new Error('Value must be a positive number');
-    }
-
-    this.#firstName = firstName;
-    this.#secondName = secondName;
-    this.#age = age;
+    this.firstName = firstName;
+    this.secondName = secondName;
+    this.age = age;
   }
 
   get age() {
@@ -26,7 +28,7 @@ class User {
   }
 
   set age(num) {
-    if (typeof num !== 'number') {
+    if (typeof num !== 'number' || num <= 0) {
       throw new Error('Input must be a number');
     }
     this.#age = num;
@@ -83,7 +85,7 @@ module.exports.createUser = function (firstName, secondName, age) {
  * @returns {Array<User>}
  */
 module.exports.createUsers = function (data) {
-  return data.map(({ firstName, secondName, age }) => new User(firstName, secondName, age));
+  return data.map(data => new User(...data));
 };
 
 /**
@@ -111,13 +113,13 @@ module.exports.createUsersSortFn = function (TestUtils) {
  * @return {Array<User>}
  */
 module.exports.celebrate = function (users) {
-  return users.map((user, index) => {
-    index % 2 === 0 && user.celebrateBirthday();
-    return user;
-  });
+  for (let index = 0; index < users.length; index += 2) {
+    users[index].celebrateBirthday();
+  }
+  return users;
 
-  // for (let index = 0; index < users.length; index += 2) {
-  //   users[index].celebrateBirthday();
-  // }
-  // return users;
+  // return users.map((user, index) => {
+  //   index % 2 === 0 && user.celebrateBirthday();
+  //   return user;
+  // });
 };

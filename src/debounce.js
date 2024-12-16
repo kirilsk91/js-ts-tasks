@@ -5,4 +5,17 @@
  * @delay {number}
  * @return {function}
  */
-module.exports.debounce = function debounce(fn, delay) {};
+module.exports.debounce = function debounce(fn, delay) {
+  let delayPeriod;
+
+  return (...args) => {
+    if (!delayPeriod) {
+      fn(...args);
+    }
+
+    // Clear the previous delay
+    // clearTimeout(delayPeriod);
+
+    delayPeriod = setTimeout(() => {}, delay);
+  };
+};

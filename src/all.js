@@ -4,7 +4,7 @@
  * @returns Promise
  */
 module.exports.all = function all(promisesArray) {
-  const res = new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     let resolvedValues = [];
     let promiseCounter = 0;
 
@@ -18,9 +18,7 @@ module.exports.all = function all(promisesArray) {
             resolve(resolvedValues);
           }
         })
-        .catch(reject);
+        .catch(err => reject(err));
     });
   });
-
-  return res;
 };

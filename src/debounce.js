@@ -6,16 +6,22 @@
  * @return {function}
  */
 module.exports.debounce = function debounce(fn, delay) {
-  let delayPeriod;
-
-  return (...args) => {
-    if (!delayPeriod) {
-      fn(...args);
+  // let cooldown = null;
+  let onCooldown = false;
+  return (...argsArray) => {
+    if (!onCooldown) {
+      fn(...argsArray);
+      onCooldown = true;
     }
 
     // Clear the previous delay
-    // clearTimeout(delayPeriod);
+    // clearTimeout(cooldown);
 
-    delayPeriod = setTimeout(() => {}, delay);
+    // cooldown = setTimeout(() => {
+    //   cooldown = null;
+    // }, delay);
+    setTimeout(() => {
+      onCooldown = false;
+    }, delay);
   };
 };

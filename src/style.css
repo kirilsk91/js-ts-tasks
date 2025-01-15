@@ -201,6 +201,8 @@ body {
 
 .tab-bar__photos,
 .tab-bar__tags {
+  border: none;
+  background-color: black;
   cursor: pointer;
 }
 
@@ -240,7 +242,12 @@ body {
   justify-content: space-around;
 }
 
-.navigation img {
-  width: 24px;
+.navigation button {
+  border: none;
+  background-color: black;
   cursor: pointer;
+}
+
+.navigation button img {
+  width: 24px;
 }

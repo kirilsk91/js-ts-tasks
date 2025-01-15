@@ -21,6 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 10px;
 }
 
 .data-bar__info {
@@ -40,7 +41,7 @@ body {
 
 .data-bar__cellular__ppc {
   position: absolute;
-  right: 23px;
+  right: 33px;
   top: 21px;
   color: black;
   font-size: 10px;
@@ -57,6 +58,12 @@ body {
   justify-content: space-between;
   margin-bottom: 10px;
   /* border: 1px solid greenyellow; */
+}
+
+.top-bar button {
+  border: none;
+  background-color: black;
+  cursor: pointer;
 }
 
 .top-bar__user-name {

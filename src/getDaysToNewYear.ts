@@ -14,7 +14,7 @@ module.exports.getDaysToNewYear = function getDaysToNewYear(dateToCheck: Date | 
 
       return new Date(formattedDate);
     }
-
+    // 2023-11-21T22:00:00.000Z default js date format
     return date;
   };
 

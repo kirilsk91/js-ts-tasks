@@ -5,6 +5,25 @@
  * @param {string|number} word
  * @returns {boolean}
  */
+// eslint-disable-next-line func-names
 module.exports.pangram = function (word: string | number): boolean {
-  throw new Error('Not implemented'); // delete this line and write your code
+  const numOfAllAlphabetLetters = 26;
+  const numOfAllDigits = 10;
+
+  if (typeof word === 'string') {
+    // const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    // remove any white spaces and non-letter characters in the whole string
+    const uniqueWordLetters = new Set(word.toLowerCase().replace(/[^a-z]/g, ''));
+    // return alphabet.split('').every(letter => uniqueWordLetters.has(letter));
+    return uniqueWordLetters.size === numOfAllAlphabetLetters;
+  }
+
+  if (typeof word === 'number') {
+    // const numbers = '1234567890';
+    const uniqueDigitNumbers = new Set(word.toString());
+    // return numbers.split('').every(numDigit => uniqueDigitNumbers.has(numDigit));
+    return uniqueDigitNumbers.size === numOfAllDigits;
+  }
+
+  return false;
 };
